@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-	    Author autor = new Author("Joshua","Bloch","joshua@email.com",true );
+	   /* Author autor = new Author("Joshua","Bloch","joshua@email.com",true );
         Author autor2 = new Author("nacho","viejo","nachota@email.com",true );
 
         System.out.println("Author: " + autor.getEmail() + "lastname: " + autor.getLastName() + "Gender: " +  autor.getName());
@@ -26,6 +26,8 @@ public class Main {
         book.setStock(book.getStock()+50);
         System.out.println(book.getStock());
         book.printmsj();
+    */
+
 
 
     }
