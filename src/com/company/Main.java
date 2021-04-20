@@ -27,7 +27,13 @@ public class Main {
         System.out.println(book.getStock());
         book.printmsj();
     */
+    Client clt = new Client("sergio","sergio@email.com",10);
 
+    System.out.println(clt.toString());
+
+    Receipt rcp = new Receipt(clt,1000);
+
+    System.out.println(rcp.toString());
 
 
     }
