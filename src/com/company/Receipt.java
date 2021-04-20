@@ -1,6 +1,7 @@
 package com.company;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.UUID;
 
 public class Receipt {
@@ -9,25 +10,29 @@ public class Receipt {
     private double total;
     private double finalTotal;
     private Client clt;
+    private ArrayList<Item> Items;
 
     public Receipt(Client clt, double total) {
         this.id = UUID.randomUUID().toString();
         this.date = LocalDate.now();
         this.clt = clt;
-        this.total = total;
-        this.finalTotal = totalWdescount(clt);
+        this.Items = new ArrayList<Item>();
+    }
 
+    public Client getClt() {
+        return clt;
     }
 
     public double getTotal() {
         return total;
     }
 
-    public double totalWdescount(Client clt){
-        double total;
-        double desc = (clt.getDescount() / 100) + 1;
-        total = getTotal() * desc;
-        return total;
+    public void totalWdescount(Receipt rcp){
+        double suma = 0;
+        double desc = (rcp.getClt().getDescount() / 100);
+        suma = total  * desc;
+        suma = total - suma;
+        finalTotal = suma;
     }
 
     @Override
@@ -36,8 +41,14 @@ public class Receipt {
                 "ID=" + id +
                 "date=" + date +
                 "cliente=" + clt +
-                "total=" + total +
+                " Items+ " + Items +
+                " total=" + total +
                 ", finalTotal=" + finalTotal +
                 '}';
+    }
+
+    public void addItem(Item newItem){
+        Items.add(newItem);
+        total += newItem.getPrice();
     }
 }

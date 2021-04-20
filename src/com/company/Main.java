@@ -33,6 +33,14 @@ public class Main {
 
     Receipt rcp = new Receipt(clt,1000);
 
+    Item newItem = new Item("ryzen 5","6 nucleos - 12 nucleos",200);
+    Item newItem2 = new Item("Ram","8GB - 3000Mhz",50);
+
+    rcp.addItem(newItem);
+    rcp.addItem(newItem2);
+
+    rcp.totalWdescount(rcp);
+
     System.out.println(rcp.toString());
 
 
