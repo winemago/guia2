@@ -27,7 +27,7 @@ public class Main {
         System.out.println(book.getStock());
         book.printmsj();
     */
-    Client clt = new Client("sergio","sergio@email.com",10);
+    /*Client clt = new Client("sergio","sergio@email.com",10);
 
     System.out.println(clt.toString());
 
@@ -42,7 +42,21 @@ public class Main {
     rcp.totalWdescount(rcp);
 
     System.out.println(rcp.toString());
+    */
 
+    ClientBank client =  new ClientBank("Lucas nova",'M');
+
+    BankAccount account = new BankAccount(10000,client);
+
+        System.out.println(account.toString());
+
+        account.deposit(5000);
+        account.extract(10000);
+        account.extract(7000);
+
+        System.out.println(account.toString());
+
+        account.activity();
 
     }
 }
